@@ -9,26 +9,22 @@ class BlogReading extends Component {
   post = (event) => {
 console.log(event.target.value);
   }
-render(){
+render: function() {
+  let boundClick = this.clickHandler.bind(thid, 'hello');
   return(
-<div>
-    <div>
-        <button onClick={this.post} value='post1'>cool</button>
-        <article className="post1" hidden={true}>;lkfajfa;jd</article>
-    </div>
+    <ul>
+    {() => {
+      items.map((item) => {
+        return <li key={item.id}>{item.title}</li>
+      });
+    }()};
+    </ul>
 
-      <div>
-        <button onClick={this.post} value='post2'>cool</button>
-        <article className="post2" hidden={true}>;lkfajfa;jd</article>
-      </div>
-      <div>
-          <button onClick={this.post} value='post3'>cool</button>
-          <article className="post3" hidden={true}>;lkfajfa;jd</article>
-      </div>
-      
-    </div>
   );
-}
+},
+
+onItemClick: function() {
+
 }
 
 
